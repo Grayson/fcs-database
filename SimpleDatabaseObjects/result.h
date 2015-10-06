@@ -40,7 +40,7 @@ private:
 	result(const statement & statement, Args... args)
 		: m_statement { statement }
 	{
-		bind(*this, 1, args...);
+		bind(*this, 1 /* documented as being position of first parameter */, args...);
 	}
 	
 	void bind(const result & res, int location) { /* noop */ };

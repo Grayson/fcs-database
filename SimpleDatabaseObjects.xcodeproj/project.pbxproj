@@ -38,8 +38,8 @@
 		1D6764C91BB8B93900933601 /* result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = result.h; path = SimpleDatabaseObjects/result.h; sourceTree = "<group>"; };
 		1D6764CB1BB8B9B400933601 /* row.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = row.cpp; path = SimpleDatabaseObjects/row.cpp; sourceTree = "<group>"; };
 		1D6764CC1BB8B9B400933601 /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = row.h; path = SimpleDatabaseObjects/row.h; sourceTree = "<group>"; };
-		1D6764CF1BB8BB2700933601 /* statement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = statement.cpp; sourceTree = "<group>"; };
-		1D6764D01BB8BB2700933601 /* statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = statement.h; sourceTree = "<group>"; };
+		1D6764CF1BB8BB2700933601 /* statement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = statement.cpp; path = SimpleDatabaseObjects/statement.cpp; sourceTree = "<group>"; };
+		1D6764D01BB8BB2700933601 /* statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = statement.h; path = SimpleDatabaseObjects/statement.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */

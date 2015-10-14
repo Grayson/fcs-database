@@ -9,6 +9,12 @@
 /* Begin PBXBuildFile section */
 		1D4BED971BADFA2100B96732 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D4BED961BADFA2100B96732 /* main.cpp */; };
 		1D5036F01BB73626002B787A /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D5036EE1BB73626002B787A /* sqlite3.c */; settings = {ASSET_TAGS = (); }; };
+		1D60565E1BC7F06B00DAE5D1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D60565D1BC7F06B00DAE5D1 /* main.cpp */; };
+		1D6056621BC7F08F00DAE5D1 /* row.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764CB1BB8B9B400933601 /* row.cpp */; settings = {ASSET_TAGS = (); }; };
+		1D6056631BC7F08F00DAE5D1 /* database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764C61BB8B80100933601 /* database.cpp */; settings = {ASSET_TAGS = (); }; };
+		1D6056641BC7F08F00DAE5D1 /* result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764C81BB8B93900933601 /* result.cpp */; settings = {ASSET_TAGS = (); }; };
+		1D6056651BC7F08F00DAE5D1 /* statement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764CF1BB8BB2700933601 /* statement.cpp */; settings = {ASSET_TAGS = (); }; };
+		1D6056661BC7F0A000DAE5D1 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D5036EE1BB73626002B787A /* sqlite3.c */; settings = {ASSET_TAGS = (); }; };
 		1D6764C71BB8B80100933601 /* database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764C61BB8B80100933601 /* database.cpp */; settings = {ASSET_TAGS = (); }; };
 		1D6764CA1BB8B93900933601 /* result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764C81BB8B93900933601 /* result.cpp */; settings = {ASSET_TAGS = (); }; };
 		1D6764CD1BB8B9B400933601 /* row.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764CB1BB8B9B400933601 /* row.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -25,6 +31,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 1;
 		};
+		1D6056591BC7F06B00DAE5D1 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +48,9 @@
 		1D5036EE1BB73626002B787A /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = external/sqlite/sqlite3.c; sourceTree = "<group>"; };
 		1D5036EF1BB73626002B787A /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = external/sqlite/sqlite3.h; sourceTree = "<group>"; };
 		1D5036F11BB78644002B787A /* database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = database.h; path = SimpleDatabaseObjects/database.h; sourceTree = "<group>"; };
+		1D60565B1BC7F06B00DAE5D1 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
+		1D60565D1BC7F06B00DAE5D1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1D6056671BC7F0B500DAE5D1 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = catch.hpp; path = external/catch/catch.hpp; sourceTree = SOURCE_ROOT; };
 		1D6764C61BB8B80100933601 /* database.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = database.cpp; path = SimpleDatabaseObjects/database.cpp; sourceTree = "<group>"; };
 		1D6764C81BB8B93900933601 /* result.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = result.cpp; path = SimpleDatabaseObjects/result.cpp; sourceTree = "<group>"; };
 		1D6764C91BB8B93900933601 /* result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = result.h; path = SimpleDatabaseObjects/result.h; sourceTree = "<group>"; };
@@ -50,6 +68,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		1D6056581BC7F06B00DAE5D1 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -59,6 +84,7 @@
 				1D6764CE1BB8B9D500933601 /* database */,
 				1D5036ED1BB73610002B787A /* sqlite */,
 				1D4BED951BADFA2100B96732 /* SimpleDatabaseObjects */,
+				1D60565C1BC7F06B00DAE5D1 /* Tests */,
 				1D4BED941BADFA2100B96732 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -67,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				1D4BED931BADFA2100B96732 /* SimpleDatabaseObjects */,
+				1D60565B1BC7F06B00DAE5D1 /* Tests */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -86,6 +113,15 @@
 				1D5036EF1BB73626002B787A /* sqlite3.h */,
 			);
 			name = sqlite;
+			sourceTree = "<group>";
+		};
+		1D60565C1BC7F06B00DAE5D1 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				1D6056671BC7F0B500DAE5D1 /* catch.hpp */,
+				1D60565D1BC7F06B00DAE5D1 /* main.cpp */,
+			);
+			path = Tests;
 			sourceTree = "<group>";
 		};
 		1D6764CE1BB8B9D500933601 /* database */ = {
@@ -123,6 +159,23 @@
 			productReference = 1D4BED931BADFA2100B96732 /* SimpleDatabaseObjects */;
 			productType = "com.apple.product-type.tool";
 		};
+		1D60565A1BC7F06B00DAE5D1 /* Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1D60565F1BC7F06B00DAE5D1 /* Build configuration list for PBXNativeTarget "Tests" */;
+			buildPhases = (
+				1D6056571BC7F06B00DAE5D1 /* Sources */,
+				1D6056581BC7F06B00DAE5D1 /* Frameworks */,
+				1D6056591BC7F06B00DAE5D1 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Tests;
+			productName = Tests;
+			productReference = 1D60565B1BC7F06B00DAE5D1 /* Tests */;
+			productType = "com.apple.product-type.tool";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -134,6 +187,9 @@
 				TargetAttributes = {
 					1D4BED921BADFA2100B96732 = {
 						CreatedOnToolsVersion = 7.0;
+					};
+					1D60565A1BC7F06B00DAE5D1 = {
+						CreatedOnToolsVersion = 7.0.1;
 					};
 				};
 			};
@@ -150,6 +206,7 @@
 			projectRoot = "";
 			targets = (
 				1D4BED921BADFA2100B96732 /* SimpleDatabaseObjects */,
+				1D60565A1BC7F06B00DAE5D1 /* Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -165,6 +222,19 @@
 				1D6764CD1BB8B9B400933601 /* row.cpp in Sources */,
 				1D5036F01BB73626002B787A /* sqlite3.c in Sources */,
 				1D6764D11BB8BB2700933601 /* statement.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		1D6056571BC7F06B00DAE5D1 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1D6056621BC7F08F00DAE5D1 /* row.cpp in Sources */,
+				1D6056661BC7F0A000DAE5D1 /* sqlite3.c in Sources */,
+				1D60565E1BC7F06B00DAE5D1 /* main.cpp in Sources */,
+				1D6056641BC7F08F00DAE5D1 /* result.cpp in Sources */,
+				1D6056631BC7F08F00DAE5D1 /* database.cpp in Sources */,
+				1D6056651BC7F08F00DAE5D1 /* statement.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +332,24 @@
 			};
 			name = Release;
 		};
+		1D6056601BC7F06B00DAE5D1 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		1D6056611BC7F06B00DAE5D1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -282,6 +370,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		1D60565F1BC7F06B00DAE5D1 /* Build configuration list for PBXNativeTarget "Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1D6056601BC7F06B00DAE5D1 /* Debug */,
+				1D6056611BC7F06B00DAE5D1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 	};

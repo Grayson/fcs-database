@@ -19,6 +19,8 @@
 		1D6764CA1BB8B93900933601 /* result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764C81BB8B93900933601 /* result.cpp */; settings = {ASSET_TAGS = (); }; };
 		1D6764CD1BB8B9B400933601 /* row.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764CB1BB8B9B400933601 /* row.cpp */; settings = {ASSET_TAGS = (); }; };
 		1D6764D11BB8BB2700933601 /* statement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764CF1BB8BB2700933601 /* statement.cpp */; settings = {ASSET_TAGS = (); }; };
+		1D95C4BC1BCF2C4B00224B90 /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D95C4BA1BCF2C4B00224B90 /* types.cpp */; settings = {ASSET_TAGS = (); }; };
+		1D95C4BD1BCF2C4B00224B90 /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D95C4BA1BCF2C4B00224B90 /* types.cpp */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -58,6 +60,8 @@
 		1D6764CC1BB8B9B400933601 /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = row.h; path = SimpleDatabaseObjects/row.h; sourceTree = "<group>"; };
 		1D6764CF1BB8BB2700933601 /* statement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = statement.cpp; path = SimpleDatabaseObjects/statement.cpp; sourceTree = "<group>"; };
 		1D6764D01BB8BB2700933601 /* statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = statement.h; path = SimpleDatabaseObjects/statement.h; sourceTree = "<group>"; };
+		1D95C4BA1BCF2C4B00224B90 /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = types.cpp; path = SimpleDatabaseObjects/types.cpp; sourceTree = "<group>"; };
+		1D95C4BB1BCF2C4B00224B90 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = SimpleDatabaseObjects/types.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +139,8 @@
 				1D6764C91BB8B93900933601 /* result.h */,
 				1D6764CF1BB8BB2700933601 /* statement.cpp */,
 				1D6764D01BB8BB2700933601 /* statement.h */,
+				1D95C4BA1BCF2C4B00224B90 /* types.cpp */,
+				1D95C4BB1BCF2C4B00224B90 /* types.h */,
 			);
 			name = database;
 			sourceTree = "<group>";
@@ -217,6 +223,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D4BED971BADFA2100B96732 /* main.cpp in Sources */,
+				1D95C4BC1BCF2C4B00224B90 /* types.cpp in Sources */,
 				1D6764C71BB8B80100933601 /* database.cpp in Sources */,
 				1D6764CA1BB8B93900933601 /* result.cpp in Sources */,
 				1D6764CD1BB8B9B400933601 /* row.cpp in Sources */,
@@ -230,6 +237,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1D6056621BC7F08F00DAE5D1 /* row.cpp in Sources */,
+				1D95C4BD1BCF2C4B00224B90 /* types.cpp in Sources */,
 				1D6056661BC7F0A000DAE5D1 /* sqlite3.c in Sources */,
 				1D60565E1BC7F06B00DAE5D1 /* main.cpp in Sources */,
 				1D6056641BC7F08F00DAE5D1 /* result.cpp in Sources */,
@@ -378,6 +386,7 @@
 				1D6056611BC7F06B00DAE5D1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

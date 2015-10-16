@@ -2,6 +2,7 @@
 
 #include "row.h"
 #include "statement.h"
+#include "types.h"
 
 #include "sqlite3.h"
 #include <limits>
@@ -85,6 +86,14 @@ private:
 	void bind(int _, const std::pair<int, TValue> & indexValuePair, Args... args)
 	{
 		bind(indexValuePair.first, indexValuePair.second, args...);
+	}
+	
+	template<typename... Args>
+	void bind(int location, const null_t _, Args... args)
+	{
+		int status = sqlite3_bind_null(m_statement, location);
+		(void)status; // Do something with status;
+		bind(location+1, args...);
 	}
 	
 	friend class database;

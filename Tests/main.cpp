@@ -59,3 +59,15 @@ TEST_CASE("Named Parameter SELECT", "[SELECT(:x)]")
 	result.step();
 	REQUIRE(result.current()[0] == 2);
 }
+
+TEST_CASE("Test NULL", "[NULL]")
+{
+	auto db = createDatabase();
+	REQUIRE(populateDatabase(*db));
+	auto insert = db->execute("INSERT INTO test (first_column, second_column) VALUES(?, ?);", fcs::database::null, 42);
+	insert.step();
+	
+	auto result = db->execute("SELECT second_column FROM test WHERE first_column IS NULL;");
+	result.step();
+	REQUIRE(result.current()[0] == 42);
+}

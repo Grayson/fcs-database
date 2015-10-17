@@ -2,6 +2,7 @@
 
 #include "sqlite3.h"
 #include "statement.h"
+#include "types.h"
 
 namespace fcs
 {
@@ -12,7 +13,9 @@ class row
 {
 public:
 	int number_of_columns() const;
-	int operator [](int columnIndex) const;
+	
+	template<typename T>
+	nullable<T> get(int columnIndex) const;
 	
 private:
 	row(const statement & statement) : m_statement { statement } {};

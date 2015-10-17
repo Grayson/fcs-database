@@ -33,13 +33,13 @@ TEST_CASE("Basic SELECT", "[SELECT]")
 	auto result = db->execute("SELECT first_column, second_column FROM test;");
 	result.step();
 	auto firstRow = result.current();
-	REQUIRE(firstRow[0] == 1);
-	REQUIRE(firstRow[1] == 2);
+	REQUIRE((int)firstRow.get<int>(0) == 1);
+	REQUIRE((int)firstRow.get<int>(1) == 2);
 	
 	result.step();
 	auto secondRow = result.current();
-	REQUIRE(secondRow[0] == 3);
-	REQUIRE(secondRow[1] == 4);
+	REQUIRE((int)secondRow.get<int>(0) == 3);
+	REQUIRE((int)secondRow.get<int>(1) == 4);
 }
 
 TEST_CASE("Parameter SELECT", "[SELECT(?)]")
@@ -48,7 +48,7 @@ TEST_CASE("Parameter SELECT", "[SELECT(?)]")
 	REQUIRE(populateDatabase(*db));
 	auto result = db->execute("SELECT second_column FROM test WHERE first_column=?", 1);
 	result.step();
-	REQUIRE(result.current()[0] == 2);
+	REQUIRE(2 == (int)result.current().get<int>(0));
 }
 
 TEST_CASE("Named Parameter SELECT", "[SELECT(:x)]")
@@ -57,7 +57,7 @@ TEST_CASE("Named Parameter SELECT", "[SELECT(:x)]")
 	REQUIRE(populateDatabase(*db));
 	auto result = db->execute("SELECT second_column FROM test WHERE first_column=:x", std::make_pair(":x", 1));
 	result.step();
-	REQUIRE(result.current()[0] == 2);
+	REQUIRE((int)result.current().get<int>(0) == 2);
 }
 
 TEST_CASE("Test NULL", "[NULL]")
@@ -69,5 +69,18 @@ TEST_CASE("Test NULL", "[NULL]")
 	
 	auto result = db->execute("SELECT second_column FROM test WHERE first_column IS NULL;");
 	result.step();
-	REQUIRE(result.current()[0] == 42);
+	REQUIRE((int)result.current().get<int>(0) == 42);
+}
+
+TEST_CASE("Test SELECT NULL", "[NULL]")
+{
+	auto db = createDatabase();
+	REQUIRE(populateDatabase(*db));
+	auto insert = db->execute("INSERT INTO test (first_column, second_column) VALUES(?, ?);", fcs::database::null, 42);
+	insert.step();
+	
+	auto result = db->execute("SELECT first_column FROM test WHERE second_column IS 42;");
+	result.step();
+	fcs::database::nullable<int> value { result.current().get<int>(0) };
+	REQUIRE(!value.has_value());
 }

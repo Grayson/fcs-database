@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		1D4BED971BADFA2100B96732 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D4BED961BADFA2100B96732 /* main.cpp */; };
+		1D4BED971BADFA2100B96732 /* app in Sources */ = {isa = PBXBuildFile; fileRef = 1D4BED961BADFA2100B96732 /* app */; };
 		1D5036F01BB73626002B787A /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D5036EE1BB73626002B787A /* sqlite3.c */; settings = {ASSET_TAGS = (); }; };
 		1D60565E1BC7F06B00DAE5D1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D60565D1BC7F06B00DAE5D1 /* main.cpp */; };
 		1D6056621BC7F08F00DAE5D1 /* row.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764CB1BB8B9B400933601 /* row.cpp */; settings = {ASSET_TAGS = (); }; };
@@ -46,22 +46,22 @@
 
 /* Begin PBXFileReference section */
 		1D4BED931BADFA2100B96732 /* SimpleDatabaseObjects */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SimpleDatabaseObjects; sourceTree = BUILT_PRODUCTS_DIR; };
-		1D4BED961BADFA2100B96732 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		1D4BED961BADFA2100B96732 /* app */ = {isa = PBXFileReference; lastKnownFileType = text; path = app; sourceTree = "<group>"; };
 		1D5036EE1BB73626002B787A /* sqlite3.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; name = sqlite3.c; path = external/sqlite/sqlite3.c; sourceTree = "<group>"; };
 		1D5036EF1BB73626002B787A /* sqlite3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = sqlite3.h; path = external/sqlite/sqlite3.h; sourceTree = "<group>"; };
-		1D5036F11BB78644002B787A /* database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = database.h; path = SimpleDatabaseObjects/database.h; sourceTree = "<group>"; };
+		1D5036F11BB78644002B787A /* database.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = database.h; path = src/database.h; sourceTree = "<group>"; };
 		1D60565B1BC7F06B00DAE5D1 /* Tests */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Tests; sourceTree = BUILT_PRODUCTS_DIR; };
 		1D60565D1BC7F06B00DAE5D1 /* main.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
 		1D6056671BC7F0B500DAE5D1 /* catch.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; name = catch.hpp; path = external/catch/catch.hpp; sourceTree = SOURCE_ROOT; };
-		1D6764C61BB8B80100933601 /* database.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = database.cpp; path = SimpleDatabaseObjects/database.cpp; sourceTree = "<group>"; };
-		1D6764C81BB8B93900933601 /* result.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = result.cpp; path = SimpleDatabaseObjects/result.cpp; sourceTree = "<group>"; };
-		1D6764C91BB8B93900933601 /* result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = result.h; path = SimpleDatabaseObjects/result.h; sourceTree = "<group>"; };
-		1D6764CB1BB8B9B400933601 /* row.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = row.cpp; path = SimpleDatabaseObjects/row.cpp; sourceTree = "<group>"; };
-		1D6764CC1BB8B9B400933601 /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = row.h; path = SimpleDatabaseObjects/row.h; sourceTree = "<group>"; };
-		1D6764CF1BB8BB2700933601 /* statement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = statement.cpp; path = SimpleDatabaseObjects/statement.cpp; sourceTree = "<group>"; };
-		1D6764D01BB8BB2700933601 /* statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = statement.h; path = SimpleDatabaseObjects/statement.h; sourceTree = "<group>"; };
-		1D95C4BA1BCF2C4B00224B90 /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = types.cpp; path = SimpleDatabaseObjects/types.cpp; sourceTree = "<group>"; };
-		1D95C4BB1BCF2C4B00224B90 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = SimpleDatabaseObjects/types.h; sourceTree = "<group>"; };
+		1D6764C61BB8B80100933601 /* database.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = database.cpp; path = src/database.cpp; sourceTree = "<group>"; };
+		1D6764C81BB8B93900933601 /* result.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = result.cpp; path = src/result.cpp; sourceTree = "<group>"; };
+		1D6764C91BB8B93900933601 /* result.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = result.h; path = src/result.h; sourceTree = "<group>"; };
+		1D6764CB1BB8B9B400933601 /* row.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = row.cpp; path = src/row.cpp; sourceTree = "<group>"; };
+		1D6764CC1BB8B9B400933601 /* row.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = row.h; path = src/row.h; sourceTree = "<group>"; };
+		1D6764CF1BB8BB2700933601 /* statement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = statement.cpp; path = src/statement.cpp; sourceTree = "<group>"; };
+		1D6764D01BB8BB2700933601 /* statement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = statement.h; path = src/statement.h; sourceTree = "<group>"; };
+		1D95C4BA1BCF2C4B00224B90 /* types.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = types.cpp; path = src/types.cpp; sourceTree = "<group>"; };
+		1D95C4BB1BCF2C4B00224B90 /* types.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = types.h; path = src/types.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 			children = (
 				1D6764CE1BB8B9D500933601 /* database */,
 				1D5036ED1BB73610002B787A /* sqlite */,
-				1D4BED951BADFA2100B96732 /* SimpleDatabaseObjects */,
+				1D4BED951BADFA2100B96732 /* CLI app */,
 				1D60565C1BC7F06B00DAE5D1 /* Tests */,
 				1D4BED941BADFA2100B96732 /* Products */,
 			);
@@ -102,11 +102,12 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		1D4BED951BADFA2100B96732 /* SimpleDatabaseObjects */ = {
+		1D4BED951BADFA2100B96732 /* CLI app */ = {
 			isa = PBXGroup;
 			children = (
-				1D4BED961BADFA2100B96732 /* main.cpp */,
+				1D4BED961BADFA2100B96732 /* app */,
 			);
+			name = "CLI app";
 			path = SimpleDatabaseObjects;
 			sourceTree = "<group>";
 		};
@@ -222,7 +223,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1D4BED971BADFA2100B96732 /* main.cpp in Sources */,
+				1D4BED971BADFA2100B96732 /* app in Sources */,
 				1D95C4BC1BCF2C4B00224B90 /* types.cpp in Sources */,
 				1D6764C71BB8B80100933601 /* database.cpp in Sources */,
 				1D6764CA1BB8B93900933601 /* result.cpp in Sources */,

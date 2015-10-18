@@ -32,6 +32,17 @@ nullable<std::string> row::get(int columnIndex) const
 {
 	return column_is_null(m_statement, columnIndex) ? nullable<std::string>{} : nullable<std::string>{ std::string { reinterpret_cast<const char *>(sqlite3_column_text(m_statement, columnIndex)) } };
 }
+	
+template<>
+nullable<data> row::get(int columnIndex) const
+{
+	if (column_is_null(m_statement, columnIndex))
+		return nullable<data> { data { nullptr, 0 } };
+	
+	const void * pointer = sqlite3_column_blob(m_statement, columnIndex);
+	int size = sqlite3_column_bytes(m_statement, columnIndex);
+	return nullable<data> { data { const_cast<void *>(pointer), static_cast<std::size_t>(size) } };
+}
 
 }
 }

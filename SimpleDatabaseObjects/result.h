@@ -96,6 +96,14 @@ private:
 		bind(location+1, args...);
 	}
 	
+	template<typename... Args>
+	void bind(int location, const data & dat, Args... args)
+	{
+		int status = sqlite3_bind_blob(m_statement, location, dat.GetPointer(), static_cast<int>(dat.GetSize()), SQLITE_STATIC);
+		(void)status; // TODO: Do something with status
+		bind(location+1, args...);
+	}
+	
 	friend class database;
 };
 

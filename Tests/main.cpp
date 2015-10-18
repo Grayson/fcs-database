@@ -5,6 +5,8 @@
 #include <memory>
 #include <string>
 
+const long kDefaultBlobContent = 'fcs\0';
+
 std::unique_ptr<fcs::database::database> createDatabase()
 {
 	const std::string createSql = "CREATE TABLE test (first_column INT, second_column INT);";
@@ -12,6 +14,8 @@ std::unique_ptr<fcs::database::database> createDatabase()
 	if (db->execute(createSql).is_error())
 		return nullptr;
 	if (db->execute("CREATE TABLE string_test (a INT, b TEXT);").is_error())
+		return nullptr;
+	if (db->execute("CREATE TABLE blob_test (a INT, b BLOB);").is_error())
 		return nullptr;
 	return std::move(db);
 }
@@ -27,6 +31,10 @@ bool populateDatabase(const fcs::database::database & db)
 		return false;
 	
 	result = db.execute("INSERT INTO string_test(a, b) VALUES (1, \"lorem ipsum\");");
+	if (result.step() != fcs::database::result::step_status::done || result.is_error())
+		return false;
+	
+	result = db.execute("INSERT INTO blob_test (a, b) VALUES (1, ?);", fcs::database::data { const_cast<long *>(&kDefaultBlobContent), sizeof(long) });
 	if (result.step() != fcs::database::result::step_status::done || result.is_error())
 		return false;
 	
@@ -113,4 +121,28 @@ TEST_CASE("String Test", "[STRING]")
 	REQUIRE(aValue.has_value());
 	const int & intValue = aValue;
 	REQUIRE(2 == intValue);
+}
+
+TEST_CASE("Data test", "[DATA]")
+{
+	auto db = createDatabase();
+	REQUIRE(populateDatabase(*db));
+	
+	auto lookupBlobResult = db->execute("SELECT b FROM blob_test WHERE a = 1;");
+	lookupBlobResult.step();
+	fcs::database::nullable<fcs::database::data> blobValue { lookupBlobResult.current().get<fcs::database::data>(0) };
+	fcs::database::data blob = blobValue;
+	long contents = *(static_cast<const long *>(blob.GetPointer()));
+	REQUIRE('f' == ((contents >> 24) & 0xFF));
+	REQUIRE('c' == ((contents >> 16) & 0xFF));
+	REQUIRE('s' == ((contents >> 8) & 0xFF));
+	REQUIRE('\0' == (contents & 0xFF));
+	
+	auto lookupByBlobResult = db->execute("SELECT a FROM blob_test WHERE b = ?", fcs::database::data { &contents, sizeof(long) });
+	auto step = lookupByBlobResult.step();
+	fcs::database::nullable<int> value = lookupByBlobResult.current().get<int>(0);
+	REQUIRE(value.has_value());
+
+	int intValue = value;
+	REQUIRE(intValue == 1);
 }

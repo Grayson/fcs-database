@@ -36,5 +36,21 @@ bool operator == (nullable<T> nullableValue, T value)
 	return nullableValue.has_value() && (T)nullableValue == value;
 }
 
+class data
+{
+public:
+	data(void * pointer, std::size_t size)
+	: m_pointer { pointer }
+	, m_size { size }
+	{};
+	
+	const void * GetPointer() const { return m_pointer; }
+	std::size_t GetSize() const { return m_size; }
+	
+private:
+	void * m_pointer;
+	std::size_t m_size;
+};
+
 }
 }

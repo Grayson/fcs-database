@@ -3,12 +3,15 @@
 
 #include "database.h"
 #include <memory>
+#include <string>
 
 std::unique_ptr<fcs::database::database> createDatabase()
 {
 	const std::string createSql = "CREATE TABLE test (first_column INT, second_column INT);";
 	auto db = std::make_unique<fcs::database::database>( ":memory:" );
 	if (db->execute(createSql).is_error())
+		return nullptr;
+	if (db->execute("CREATE TABLE string_test (a INT, b TEXT);").is_error())
 		return nullptr;
 	return std::move(db);
 }
@@ -20,6 +23,10 @@ bool populateDatabase(const fcs::database::database & db)
 		return false;
 	
 	result = db.execute("INSERT INTO test (first_column, second_column) VALUES (3, 4);");
+	if (result.step() != fcs::database::result::step_status::done || result.is_error())
+		return false;
+	
+	result = db.execute("INSERT INTO string_test(a, b) VALUES (1, \"lorem ipsum\");");
 	if (result.step() != fcs::database::result::step_status::done || result.is_error())
 		return false;
 	
@@ -83,4 +90,27 @@ TEST_CASE("Test SELECT NULL", "[NULL]")
 	result.step();
 	fcs::database::nullable<int> value { result.current().get<int>(0) };
 	REQUIRE(!value.has_value());
+}
+
+TEST_CASE("String Test", "[STRING]")
+{
+	auto db = createDatabase();
+	REQUIRE(populateDatabase(*db));
+	
+	auto insert = db->execute("INSERT INTO string_test(a, b) VALUES (2, \"dolor sit\");");//, 2, "dolor sit"
+	REQUIRE(insert.step() == fcs::database::result::step_status::done);
+	REQUIRE(!insert.is_error());
+	
+	auto bValueResult = db->execute("SELECT b FROM string_test WHERE a IS 1;");
+	bValueResult.step();
+	fcs::database::nullable<std::string> bValue { bValueResult.current().get<std::string>(0) };
+	const std::string & stringValue = bValue;
+	REQUIRE(stringValue == "lorem ipsum");
+	
+	auto aValueResult = db->execute("SELECT a FROM string_test WHERE b = ?;", "dolor sit");
+	aValueResult.step();
+	fcs::database::nullable<int> aValue { aValueResult.current().get<int>(0) };
+	REQUIRE(aValue.has_value());
+	const int & intValue = aValue;
+	REQUIRE(2 == intValue);
 }

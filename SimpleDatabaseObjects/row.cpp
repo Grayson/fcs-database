@@ -1,4 +1,5 @@
 #include "row.h"
+#include <string>
 
 namespace
 {
@@ -24,6 +25,12 @@ template<>
 nullable<int> row::get(int columnIndex) const
 {
 	return column_is_null(m_statement, columnIndex) ? nullable<int> {} :  nullable<int> { sqlite3_column_int(m_statement, columnIndex) };
+}
+	
+template <>
+nullable<std::string> row::get(int columnIndex) const
+{
+	return column_is_null(m_statement, columnIndex) ? nullable<std::string>{} : nullable<std::string>{ std::string { reinterpret_cast<const char *>(sqlite3_column_text(m_statement, columnIndex)) } };
 }
 
 }

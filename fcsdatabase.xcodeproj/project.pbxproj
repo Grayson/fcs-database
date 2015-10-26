@@ -9,15 +9,15 @@
 /* Begin PBXBuildFile section */
 		1D60565E1BC7F06B00DAE5D1 /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D60565D1BC7F06B00DAE5D1 /* main.cpp */; };
 		1DDF78E51BD483D700658756 /* row.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764CB1BB8B9B400933601 /* row.cpp */; settings = {ASSET_TAGS = (); }; };
-		1DDF78E61BD483D700658756 /* row.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6764CC1BB8B9B400933601 /* row.h */; settings = {ASSET_TAGS = (); }; };
-		1DDF78E71BD483D700658756 /* database.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D5036F11BB78644002B787A /* database.h */; settings = {ASSET_TAGS = (); }; };
+		1DDF78E61BD483D700658756 /* row.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6764CC1BB8B9B400933601 /* row.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		1DDF78E71BD483D700658756 /* database.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D5036F11BB78644002B787A /* database.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDF78E81BD483D700658756 /* database.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764C61BB8B80100933601 /* database.cpp */; settings = {ASSET_TAGS = (); }; };
 		1DDF78E91BD483D700658756 /* result.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764C81BB8B93900933601 /* result.cpp */; settings = {ASSET_TAGS = (); }; };
-		1DDF78EA1BD483D700658756 /* result.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6764C91BB8B93900933601 /* result.h */; settings = {ASSET_TAGS = (); }; };
+		1DDF78EA1BD483D700658756 /* result.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6764C91BB8B93900933601 /* result.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDF78EB1BD483D700658756 /* statement.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D6764CF1BB8BB2700933601 /* statement.cpp */; settings = {ASSET_TAGS = (); }; };
-		1DDF78EC1BD483D700658756 /* statement.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6764D01BB8BB2700933601 /* statement.h */; settings = {ASSET_TAGS = (); }; };
+		1DDF78EC1BD483D700658756 /* statement.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D6764D01BB8BB2700933601 /* statement.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDF78ED1BD483D700658756 /* types.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 1D95C4BA1BCF2C4B00224B90 /* types.cpp */; settings = {ASSET_TAGS = (); }; };
-		1DDF78EE1BD483D700658756 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95C4BB1BCF2C4B00224B90 /* types.h */; settings = {ASSET_TAGS = (); }; };
+		1DDF78EE1BD483D700658756 /* types.h in Headers */ = {isa = PBXBuildFile; fileRef = 1D95C4BB1BCF2C4B00224B90 /* types.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		1DDF78EF1BD483E100658756 /* sqlite3.c in Sources */ = {isa = PBXBuildFile; fileRef = 1D5036EE1BB73626002B787A /* sqlite3.c */; settings = {ASSET_TAGS = (); }; };
 		1DDF78F21BD4840E00658756 /* libfcsdatabase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DDF78DA1BD483C100658756 /* libfcsdatabase.a */; };
 /* End PBXBuildFile section */
@@ -124,8 +124,8 @@
 			children = (
 				1D6764CB1BB8B9B400933601 /* row.cpp */,
 				1D6764CC1BB8B9B400933601 /* row.h */,
-				1D5036F11BB78644002B787A /* database.h */,
 				1D6764C61BB8B80100933601 /* database.cpp */,
+				1D5036F11BB78644002B787A /* database.h */,
 				1D6764C81BB8B93900933601 /* result.cpp */,
 				1D6764C91BB8B93900933601 /* result.h */,
 				1D6764CF1BB8BB2700933601 /* statement.cpp */,
